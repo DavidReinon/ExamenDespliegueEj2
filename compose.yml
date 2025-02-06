@@ -1,0 +1,18 @@
+services:
+    db:
+        image: davidreinon470/sqlpinacoteca:v1
+        container_name: contenedorPinacoteca
+        environment:
+            MYSQL_ROOT_PASSWORD: contrasenyaRoot
+            MYSQL_DATABASE: cine
+            MYSQL_USER: usuario1
+            MYSQL_PASSWORD: contrasenyaUsuario1
+        ports:
+            - "3306:3306"
+    php:
+        image: davidreinon470/phppinacoteca:v1
+        container_name: contenedorMiAppPinacoteca
+        ports:
+            - "8080:80"
+        depends_on:
+            - db
