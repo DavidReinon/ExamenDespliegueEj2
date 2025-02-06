@@ -2,6 +2,11 @@ services:
     db:
         image: davidreinon/sqlpinacoteca:v1
         container_name: contenedorPinacoteca
+        environment:
+            MYSQL_ROOT_PASSWORD: pinacoteca1234
+            MYSQL_DATABASE: pinacoteca
+            MYSQL_USER: davinci
+            MYSQL_PASSWORD: davinci1234
         ports:
             - "3306:3306"
     php:
